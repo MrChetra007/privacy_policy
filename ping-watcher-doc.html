@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PingWatch — Documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --green:    #1a7a4a;
+  --green-lt: #e8f5ee;
+  --bg:       #f6f8fa;
+  --card:     #ffffff;
+  --border:   #e8ecf0;
+  --text:     #0d1117;
+  --muted:    #57606a;
+  --dim:      #8c959f;
+  --code-bg:  #f1f5f9;
+  --code-clr: #1a7a4a;
+  --font:     'DM Sans', sans-serif;
+  --mono:     'DM Mono', monospace;
+  --sidebar-w: 240px;
+}
+
+body { font-family: var(--font); background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.7; }
+
+/* ── LAYOUT ─── */
+.layout    { display: flex; min-height: 100vh; }
+.sidebar   { width: var(--sidebar-w); min-width: var(--sidebar-w); background: var(--card); border-right: 1px solid var(--border); position: fixed; top: 0; left: 0; height: 100vh; overflow-y: auto; padding: 24px 0 40px; }
+.main      { margin-left: var(--sidebar-w); flex: 1; max-width: 860px; padding: 48px 48px 80px; }
+
+/* ── SIDEBAR ─── */
+.sb-logo   { display: flex; align-items: center; gap: 10px; padding: 0 20px 20px; border-bottom: 1px solid var(--border); margin-bottom: 16px; text-decoration: none; }
+.sb-logo-icon { width: 30px; height: 30px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 15px; color: white; flex-shrink: 0; }
+.sb-logo-text { font-size: 15px; font-weight: 700; color: var(--text); }
+
+.sb-section-label { font-size: 10px; font-weight: 700; color: var(--dim); text-transform: uppercase; letter-spacing: 0.8px; padding: 8px 20px 4px; }
+.sb-link { display: flex; align-items: center; gap: 8px; padding: 7px 20px; font-size: 13px; color: var(--muted); text-decoration: none; transition: all 0.15s; border-left: 3px solid transparent; }
+.sb-link:hover { color: var(--green); background: var(--green-lt); }
+.sb-link.active { color: var(--green); background: var(--green-lt); border-left-color: var(--green); font-weight: 600; }
+.sb-link-icon { font-size: 14px; width: 16px; text-align: center; flex-shrink: 0; }
+
+/* ── MAIN CONTENT ─── */
+h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; color: var(--text); margin-bottom: 8px; }
+h2 { font-size: 20px; font-weight: 700; color: var(--text); margin: 40px 0 12px; padding-top: 40px; border-top: 1px solid var(--border); }
+h2:first-of-type { border-top: none; padding-top: 0; margin-top: 32px; }
+h3 { font-size: 15px; font-weight: 700; color: var(--text); margin: 24px 0 8px; }
+
+p  { color: var(--muted); margin-bottom: 12px; }
+ul, ol { color: var(--muted); padding-left: 20px; margin-bottom: 12px; }
+li { margin-bottom: 5px; }
+a  { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* page header */
+.page-header { margin-bottom: 32px; }
+.page-lead { font-size: 16px; color: var(--muted); margin-top: 6px; }
+
+/* section anchor */
+.section { scroll-margin-top: 24px; }
+
+/* badges */
+.badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 99px; font-size: 11px; font-weight: 600; border: 1px solid; }
+.badge-green { background: var(--green-lt); color: var(--green); border-color: rgba(26,122,74,0.2); }
+.badge-blue  { background: #ddf4ff; color: #0969da; border-color: rgba(9,105,218,0.2); }
+.badge-gray  { background: #f0f0f0; color: var(--muted); border-color: var(--border); }
+
+/* code blocks */
+pre {
+  background: #0d1117; border-radius: 10px; padding: 18px 20px;
+  overflow-x: auto; margin: 12px 0 20px; border: 1px solid #21262d;
+}
+pre code { font-family: var(--mono); font-size: 13px; color: #e6edf3; line-height: 1.8; background: none; padding: 0; border: none; border-radius: 0; }
+code { font-family: var(--mono); font-size: 12px; background: var(--code-bg); color: var(--code-clr); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border); }
+pre code .c  { color: #6e7681; } /* comment */
+pre code .k  { color: #ff7b72; } /* keyword */
+pre code .s  { color: #a5d6ff; } /* string */
+pre code .n  { color: #d2a8ff; } /* name */
+pre code .v  { color: #79c0ff; } /* value */
+pre code .g  { color: #56d364; } /* green */
+
+/* info boxes */
+.info-box {
+  border-radius: 10px; padding: 14px 18px; margin: 16px 0 20px;
+  border: 1px solid; display: flex; gap: 12px; align-items: flex-start;
+}
+.info-box.tip    { background: var(--green-lt); border-color: rgba(26,122,74,0.25); }
+.info-box.warn   { background: #fff8c5; border-color: #e3b341; }
+.info-box.note   { background: #ddf4ff; border-color: rgba(9,105,218,0.25); }
+.info-box-icon   { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.info-box-body   { font-size: 13px; color: var(--muted); }
+.info-box-body strong { color: var(--text); }
+
+/* tables */
+table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; font-size: 13px; }
+th { background: var(--bg); padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--dim); border-bottom: 2px solid var(--border); }
+td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--muted); }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--bg); }
+
+/* step cards */
+.steps { display: flex; flex-direction: column; gap: 0; }
+.step  { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+.step:last-child { border-bottom: none; }
+.step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--green); color: white; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-body h3 { margin: 0 0 4px; font-size: 14px; }
+.step-body p  { margin: 0; font-size: 13px; }
+
+/* feature grid */
+.feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0 24px; }
+.feat-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+.feat-icon { font-size: 20px; margin-bottom: 8px; }
+.feat-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.feat-desc  { font-size: 12px; color: var(--dim); line-height: 1.5; }
+
+/* breadcrumb */
+.breadcrumb { font-size: 12px; color: var(--dim); margin-bottom: 16px; display: flex; align-items: center; gap: 6px; }
+.breadcrumb span { color: var(--dim); }
+
+/* scroll top */
+.scroll-top { position: fixed; bottom: 24px; right: 24px; width: 36px; height: 36px; background: var(--green); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(26,122,74,0.3); transition: all 0.2s; }
+.scroll-top:hover { background: #166038; transform: translateY(-2px); }
+
+/* responsive */
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .main    { margin-left: 0; padding: 24px 20px 60px; }
+  .feature-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <a href="#intro" class="sb-logo">
+      <div class="sb-logo-icon">◉</div>
+      <div class="sb-logo-text">PingWatch Docs</div>
+    </a>
+
+    <div class="sb-section-label">Overview</div>
+    <a href="#intro"    class="sb-link active"><span class="sb-link-icon">◉</span> Introduction</a>
+    <a href="#features" class="sb-link"><span class="sb-link-icon">✨</span> Features</a>
+    <a href="#stack"    class="sb-link"><span class="sb-link-icon">🛠</span> Tech Stack</a>
+
+    <div class="sb-section-label">Setup</div>
+    <a href="#prereqs"  class="sb-link"><span class="sb-link-icon">📋</span> Prerequisites</a>
+    <a href="#install"  class="sb-link"><span class="sb-link-icon">⚡</span> Installation</a>
+    <a href="#env"      class="sb-link"><span class="sb-link-icon">🔑</span> Environment Variables</a>
+    <a href="#database" class="sb-link"><span class="sb-link-icon">🗄</span> Database Setup</a>
+    <a href="#edge"     class="sb-link"><span class="sb-link-icon">⚙</span> Edge Functions</a>
+
+    <div class="sb-section-label">App</div>
+    <a href="#routes"   class="sb-link"><span class="sb-link-icon">🗺</span> Routes</a>
+    <a href="#stores"   class="sb-link"><span class="sb-link-icon">📦</span> Stores</a>
+    <a href="#plans"    class="sb-link"><span class="sb-link-icon">💳</span> Pricing Plans</a>
+
+    <div class="sb-section-label">Deploy</div>
+    <a href="#build"    class="sb-link"><span class="sb-link-icon">🚀</span> Build & Deploy</a>
+    <a href="#vercel"   class="sb-link"><span class="sb-link-icon">▲</span> Vercel</a>
+    <a href="#pgcron"   class="sb-link"><span class="sb-link-icon">⏱</span> Scheduled Jobs</a>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="main">
+
+    <!-- INTRO -->
+    <section class="section" id="intro">
+      <div class="page-header">
+        <div class="breadcrumb">PingWatch <span>›</span> Documentation</div>
+        <h1>◉ PingWatch</h1>
+        <p class="page-lead">API monitoring that alerts you before your customers do.</p>
+        <div class="badge-row">
+          <span class="badge badge-green">Vue 3</span>
+          <span class="badge badge-green">Supabase</span>
+          <span class="badge badge-blue">Tailwind v4</span>
+          <span class="badge badge-gray">MIT License</span>
+        </div>
+      </div>
+
+      <p>PingWatch is a full-stack SaaS application that monitors your API endpoints, detects downtime, sends alerts via email and Slack, and lets you share beautiful public status pages with your customers.</p>
+
+      <div class="info-box tip">
+        <div class="info-box-icon">💡</div>
+        <div class="info-box-body">
+          <strong>Just getting started?</strong> Jump to <a href="#install">Installation</a> to get the app running locally in under 5 minutes.
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <h2>✨ Features</h2>
+      <div class="feature-grid">
+        <div class="feat-card">
+          <div class="feat-icon">⚡</div>
+          <div class="feat-title">Real-time Monitoring</div>
+          <div class="feat-desc">Ping any HTTP/HTTPS endpoint every 30 seconds to 5 minutes depending on your plan.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🔔</div>
+          <div class="feat-title">Instant Alerts</div>
+          <div class="feat-desc">Email and Slack notifications the second a monitor goes down or recovers.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">◫</div>
+          <div class="feat-title">Public Status Pages</div>
+          <div class="feat-desc">Shareable uptime pages at <code>/status/your-slug</code> with 90-day history bars.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">📊</div>
+          <div class="feat-title">Analytics</div>
+          <div class="feat-desc">24h / 7d / 30d uptime percentages, latency trends, incident distribution charts.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">⚠</div>
+          <div class="feat-title">Incident Timeline</div>
+          <div class="feat-desc">Full incident history with auto-calculated downtime duration and resolution tracking.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">💳</div>
+          <div class="feat-title">Subscription Billing</div>
+          <div class="feat-desc">Lemon Squeezy integration with Free / Starter / Pro plans and automatic plan enforcement.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="section" id="stack">
+      <h2>🛠 Tech Stack</h2>
+      <table>
+        <thead><tr><th>Layer</th><th>Technology</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Frontend</td><td>Vue 3 + Vite</td><td>UI framework</td></tr>
+          <tr><td>Styling</td><td>Tailwind CSS v4</td><td>Utility-first CSS</td></tr>
+          <tr><td>State</td><td>Pinia</td><td>Global state management</td></tr>
+          <tr><td>Router</td><td>Vue Router</td><td>Client-side routing</td></tr>
+          <tr><td>Backend</td><td>Supabase</td><td>Postgres + Auth + Realtime + Edge Functions</td></tr>
+          <tr><td>Billing</td><td>Lemon Squeezy</td><td>Subscription payments</td></tr>
+          <tr><td>Email</td><td>Resend</td><td>Transactional alert emails</td></tr>
+          <tr><td>Charts</td><td>Chart.js</td><td>Analytics charts</td></tr>
+          <tr><td>Hosting</td><td>Vercel</td><td>Frontend deployment</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- PREREQS -->
+    <section class="section" id="prereqs">
+      <h2>📋 Prerequisites</h2>
+      <p>Before you start, make sure you have accounts on all required services:</p>
+      <table>
+        <thead><tr><th>Service</th><th>Used for</th><th>Free tier?</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://supabase.com" target="_blank">Supabase</a></td><td>Database, Auth, Edge Functions</td><td>✅ Yes</td></tr>
+          <tr><td><a href="https://lemonsqueezy.com" target="_blank">Lemon Squeezy</a></td><td>Subscription billing</td><td>✅ Yes (5% fee)</td></tr>
+          <tr><td><a href="https://resend.com" target="_blank">Resend</a></td><td>Email alerts</td><td>✅ Yes (3k/mo)</td></tr>
+          <tr><td><a href="https://vercel.com" target="_blank">Vercel</a></td><td>Frontend hosting</td><td>✅ Yes</td></tr>
+          <tr><td>Node.js 18+</td><td>Local development</td><td>✅ Free</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- INSTALL -->
+    <section class="section" id="install">
+      <h2>⚡ Installation</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Clone the repository</h3>
+            <pre><code>git clone https://github.com/spzin007/ping-watcher.git
+cd ping-watcher</code></pre>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Install dependencies</h3>
+            <pre><code>npm install</code></pre>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>Create your <code>.env</code> file</h3>
+            <p>See <a href="#env">Environment Variables</a> below.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3>Set up the database</h3>
+            <p>See <a href="#database">Database Setup</a> below.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h3>Start the dev server</h3>
+            <pre><code>npm run dev</code></pre>
+            <p>App runs at <code>http://localhost:5173</code></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENV -->
+    <section class="section" id="env">
+      <h2>🔑 Environment Variables</h2>
+      <p>Create a <code>.env</code> file in your project root:</p>
+      <pre><code># Supabase — find these in Dashboard → Project Settings → API
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your_anon_key_here
+
+# Lemon Squeezy — find Variant IDs in your LS product page
+VITE_LS_STARTER_VARIANT_ID=123456
+VITE_LS_PRO_VARIANT_ID=789012
+VITE_LS_STORE_SLUG=your-store-slug</code></pre>
+
+      <div class="info-box warn">
+        <div class="info-box-icon">⚠</div>
+        <div class="info-box-body">
+          <strong>Never commit your <code>.env</code> file.</strong> It's already in <code>.gitignore</code> by default with Vite.
+        </div>
+      </div>
+
+      <h3>Supabase Edge Function Secrets</h3>
+      <p>These are set via the Supabase CLI — not in your <code>.env</code> file:</p>
+      <pre><code>supabase secrets set RESEND_API_KEY=re_your_key
+supabase secrets set RESEND_FROM=PingWatch &lt;alerts@yourdomain.com&gt;
+supabase secrets set LEMONSQUEEZY_WEBHOOK_SECRET=your_secret
+supabase secrets set LEMONSQUEEZY_API_KEY=your_api_key</code></pre>
+    </section>
+
+    <!-- DATABASE -->
+    <section class="section" id="database">
+      <h2>🗄 Database Setup</h2>
+      <p>All tables, RLS policies, and functions are in <code>pingwatch_schema.sql</code>.</p>
+
+      <h3>Step 1 — Enable extensions</h3>
+      <p>In Supabase Dashboard → Database → Extensions, enable:</p>
+      <ul>
+        <li><strong>pg_cron</strong> — scheduled monitor checks</li>
+        <li><strong>pg_net</strong> — HTTP calls from scheduled jobs</li>
+        <li><strong>pgcrypto</strong> — UUID generation (usually already enabled)</li>
+      </ul>
+
+      <h3>Step 2 — Run the schema</h3>
+      <p>Go to Supabase Dashboard → SQL Editor → New Query, paste the entire contents of <code>pingwatch_schema.sql</code> and click Run.</p>
+
+      <div class="info-box note">
+        <div class="info-box-icon">ℹ</div>
+        <div class="info-box-body">
+          The schema creates 8 tables, 10 RLS policies, 4 functions, 2 triggers, and 2 pg_cron jobs automatically.
+        </div>
+      </div>
+
+      <h3>Database Tables</h3>
+      <table>
+        <thead><tr><th>Table</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>profiles</code></td><td>User accounts, plan info, Lemon Squeezy IDs</td></tr>
+          <tr><td><code>monitors</code></td><td>URL endpoints to track</td></tr>
+          <tr><td><code>monitor_checks</code></td><td>Every ping result (time-series)</td></tr>
+          <tr><td><code>incidents</code></td><td>Downtime events with auto-calculated duration</td></tr>
+          <tr><td><code>alert_channels</code></td><td>Email / Slack / webhook configs</td></tr>
+          <tr><td><code>monitor_alert_channels</code></td><td>Links monitors to alert channels</td></tr>
+          <tr><td><code>status_pages</code></td><td>Public uptime pages</td></tr>
+          <tr><td><code>status_page_monitors</code></td><td>Links monitors to status pages</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- EDGE FUNCTIONS -->
+    <section class="section" id="edge">
+      <h2>⚙ Edge Functions</h2>
+      <p>PingWatch uses 3 Supabase Edge Functions (Deno runtime):</p>
+
+      <table>
+        <thead><tr><th>Function</th><th>Trigger</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>run-checks</code></td><td>pg_cron every minute</td><td>Ping all due monitors, detect incidents, fire alerts</td></tr>
+          <tr><td><code>send-alert</code></td><td>Called by run-checks</td><td>Send email (Resend) + Slack notifications</td></tr>
+          <tr><td><code>ls-webhook</code></td><td>Lemon Squeezy webhook</td><td>Sync subscription plan changes to profiles table</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Deploy all functions</h3>
+      <pre><code>npm install -g supabase
+supabase login
+supabase link --project-ref YOUR_PROJECT_REF
+
+supabase functions deploy run-checks
+supabase functions deploy send-alert
+supabase functions deploy ls-webhook</code></pre>
+    </section>
+
+    <!-- ROUTES -->
+    <section class="section" id="routes">
+      <h2>🗺 Routes</h2>
+      <table>
+        <thead><tr><th>Path</th><th>View</th><th>Auth required</th></tr></thead>
+        <tbody>
+          <tr><td><code>/</code></td><td>Landing.vue</td><td>No</td></tr>
+          <tr><td><code>/login</code></td><td>Login.vue</td><td>No</td></tr>
+          <tr><td><code>/signup</code></td><td>Signup.vue</td><td>No</td></tr>
+          <tr><td><code>/status/:slug</code></td><td>PublicStatus.vue</td><td>No</td></tr>
+          <tr><td><code>/dashboard</code></td><td>Dashboard.vue</td><td>✅ Yes</td></tr>
+          <tr><td><code>/monitors</code></td><td>Monitors.vue</td><td>✅ Yes</td></tr>
+          <tr><td><code>/incidents</code></td><td>Incidents.vue</td><td>✅ Yes</td></tr>
+          <tr><td><code>/analytics</code></td><td>Analytics.vue</td><td>✅ Yes</td></tr>
+          <tr><td><code>/alerts</code></td><td>Alerts.vue</td><td>✅ Yes</td></tr>
+          <tr><td><code>/status-pages</code></td><td>StatusPages.vue</td><td>✅ Yes</td></tr>
+          <tr><td><code>/billing</code></td><td>Billing.vue</td><td>✅ Yes</td></tr>
+          <tr><td><code>/help</code></td><td>Help.vue</td><td>✅ Yes</td></tr>
+          <tr><td><code>/settings</code></td><td>Settings.vue</td><td>✅ Yes</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- STORES -->
+    <section class="section" id="stores">
+      <h2>📦 Pinia Stores</h2>
+      <table>
+        <thead><tr><th>Store</th><th>File</th><th>What it manages</th></tr></thead>
+        <tbody>
+          <tr><td><code>useAuthStore</code></td><td>stores/auth.js</td><td>User session, profile, plan, sign in/out</td></tr>
+          <tr><td><code>useMonitorsStore</code></td><td>stores/monitors.js</td><td>Monitor list, CRUD, realtime subscription</td></tr>
+          <tr><td><code>useIncidentsStore</code></td><td>stores/incidents.js</td><td>Incident list, resolve, realtime</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- PLANS -->
+    <section class="section" id="plans">
+      <h2>💳 Pricing Plans</h2>
+      <table>
+        <thead><tr><th>Plan</th><th>Price</th><th>Monitors</th><th>Interval</th><th>Alert Channels</th><th>Status Pages</th></tr></thead>
+        <tbody>
+          <tr><td>Free</td><td>$0/mo</td><td>3</td><td>5 min</td><td>1 email</td><td>0</td></tr>
+          <tr><td>Starter</td><td>$19/mo</td><td>20</td><td>1 min</td><td>5 channels</td><td>1</td></tr>
+          <tr><td>Pro</td><td>$49/mo</td><td>100</td><td>30 sec</td><td>Unlimited</td><td>3</td></tr>
+        </tbody>
+      </table>
+      <p>Payments powered by <a href="https://lemonsqueezy.com" target="_blank">Lemon Squeezy</a>. They handle all global VAT and sales tax automatically.</p>
+    </section>
+
+    <!-- BUILD -->
+    <section class="section" id="build">
+      <h2>🚀 Build for Production</h2>
+      <pre><code>npm run build</code></pre>
+      <p>Output goes to <code>dist/</code> — ready to deploy anywhere that serves static files.</p>
+    </section>
+
+    <!-- VERCEL -->
+    <section class="section" id="vercel">
+      <h2>▲ Deploy to Vercel</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Push to GitHub</h3>
+            <pre><code>git add .
+git commit -m "ready to deploy"
+git push origin main</code></pre>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Import to Vercel</h3>
+            <p>Go to <a href="https://vercel.com/new" target="_blank">vercel.com/new</a> → Import your GitHub repo → Deploy.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>Add environment variables</h3>
+            <p>In Vercel → Project → Settings → Environment Variables, add all your <code>VITE_</code> variables.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3>Redeploy</h3>
+            <pre><code>vercel --prod</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PGCRON -->
+    <section class="section" id="pgcron">
+      <h2>⏱ Scheduled Jobs</h2>
+      <p>After deploying Edge Functions, update the pg_cron job to point to your production URL.</p>
+      <p>Run this in Supabase SQL Editor:</p>
+      <pre><code>-- Remove old job
+SELECT cron.unschedule('run-monitor-checks');
+
+-- Schedule with production URL
+SELECT cron.schedule(
+  'run-monitor-checks',
+  '* * * * *',
+  $$
+    SELECT net.http_post(
+      url     := 'https://YOUR_PROJECT.supabase.co/functions/v1/run-checks',
+      headers := jsonb_build_object(
+        'Authorization', 'Bearer YOUR_SERVICE_ROLE_KEY'
+      ),
+      body    := '{}'::jsonb
+    );
+  $$
+);
+
+-- Verify
+SELECT * FROM cron.job;</code></pre>
+
+      <div class="info-box warn">
+        <div class="info-box-icon">⚠</div>
+        <div class="info-box-body">
+          Replace <strong>YOUR_PROJECT</strong> and <strong>YOUR_SERVICE_ROLE_KEY</strong> with your real values from Supabase Dashboard → Project Settings → API.
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Scroll to top -->
+<button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// Active sidebar link on scroll
+const sections = document.querySelectorAll('.section')
+const links    = document.querySelectorAll('.sb-link')
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      links.forEach(l => l.classList.remove('active'))
+      const active = document.querySelector(`.sb-link[href="#${entry.target.id}"]`)
+      if (active) active.classList.add('active')
+    }
+  })
+}, { rootMargin: '-20% 0px -70% 0px' })
+
+sections.forEach(s => observer.observe(s))
+</script>
+</body>
+</html>
