@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy – Wave Lab</title>
+  <title>Privacy Policy – Science Lab</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -30,7 +30,6 @@
       min-height: 100vh;
     }
 
-    /* top bar */
     header {
       border-bottom: 1px solid var(--border);
       padding: 1.5rem 2rem;
@@ -50,7 +49,7 @@
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-family: var(--heading-font);
-      font-size: 14px;
+      font-size: 13px;
       color: var(--accent);
       flex-shrink: 0;
     }
@@ -75,14 +74,12 @@
       border-radius: 999px;
     }
 
-    /* layout */
     .container {
       max-width: 760px;
       margin: 0 auto;
       padding: 4rem 2rem 6rem;
     }
 
-    /* hero */
     .hero {
       margin-bottom: 3.5rem;
       padding-bottom: 3rem;
@@ -123,7 +120,6 @@
       flex-shrink: 0;
     }
 
-    /* sections */
     .section {
       margin-bottom: 2.75rem;
       padding: 2rem;
@@ -142,6 +138,8 @@
     .section:nth-child(8)  { animation-delay: 0.35s; }
     .section:nth-child(9)  { animation-delay: 0.40s; }
     .section:nth-child(10) { animation-delay: 0.45s; }
+    .section:nth-child(11) { animation-delay: 0.50s; }
+    .section:nth-child(12) { animation-delay: 0.55s; }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
@@ -165,10 +163,18 @@
       line-height: 1.2;
     }
 
+    h3 {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 1.4rem 0 0.6rem;
+    }
+
     p { color: #c4bfb7; margin-bottom: 0.75rem; }
     p:last-child { margin-bottom: 0; }
 
-    /* admob highlight box */
     .highlight {
       background: var(--accent-dim);
       border: 1px solid rgba(245,166,35,0.25);
@@ -177,7 +183,7 @@
       margin-top: 1rem;
     }
 
-    .highlight p { color: #d4c9b0; font-size: 0.9rem; }
+    .highlight p { color: #d4c9b0; font-size: 0.9rem; margin-bottom: 0; }
 
     ul {
       list-style: none;
@@ -201,10 +207,62 @@
       top: 0.35rem;
     }
 
+    /* Lab chips grid */
+    .lab-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.55rem;
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 520px) { .lab-grid { grid-template-columns: 1fr; } }
+
+    .lab-chip {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.6rem 0.85rem;
+    }
+
+    .chip-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.05rem; }
+    .chip-inner { display: flex; flex-direction: column; }
+    .chip-name { font-size: 0.82rem; font-weight: 500; color: var(--text); }
+    .chip-desc { font-size: 0.72rem; color: var(--muted); margin-top: 0.1rem; }
+
+    /* Plan cards */
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.55rem;
+      margin-top: 0.85rem;
+    }
+
+    @media (max-width: 520px) { .plan-grid { grid-template-columns: 1fr; } }
+
+    .plan-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+    }
+
+    .plan-name {
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .plan-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
     a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(245,166,35,0.3); transition: border-color 0.2s; }
     a:hover { border-color: var(--accent); }
 
-    /* contact card */
     .contact-card {
       display: flex;
       align-items: center;
@@ -230,7 +288,6 @@
     .contact-info strong { display: block; color: var(--text); font-weight: 500; margin-bottom: 0.2rem; }
     .contact-info span { color: var(--muted); }
 
-    /* footer */
     footer {
       text-align: center;
       padding: 2rem;
@@ -250,8 +307,8 @@
 <body>
 
 <header>
-  <div class="logo-mark">WL</div>
-  <span class="logo-text">Wave Lab</span>
+  <div class="logo-mark">SL</div>
+  <span class="logo-text">Science Lab</span>
   <span class="badge">Privacy Policy</span>
 </header>
 
@@ -261,29 +318,108 @@
     <p class="hero-label">Legal &amp; Privacy</p>
     <h1>Privacy Policy</h1>
     <div class="hero-meta">
-      <span><span class="dot"></span>Effective: March 19, 2026</span>
-      <span><span class="dot"></span>Last Updated: March 19, 2026</span>
-      <span><span class="dot"></span>App: Wave Lab</span>
+      <span><span class="dot"></span>Effective: April 5, 2026</span>
+      <span><span class="dot"></span>Last Updated: April 5, 2026</span>
+      <span><span class="dot"></span>App: Science Lab</span>
     </div>
   </div>
 
+  <!-- 01 -->
   <div class="section">
     <p class="section-number">01</p>
     <h2>Introduction</h2>
-    <p>Welcome to <strong>Wave Lab</strong> — an educational app that lets you explore Ohm's Law through interactive voltage and resistance sliders. This Privacy Policy describes our practices regarding information when you use our app.</p>
-    <p>By using Wave Lab, you agree to the practices described in this document. Please read it carefully.</p>
+    <p>Welcome to <strong>Science Lab – Virtual Experiment Suite</strong>. Science Lab is an interactive educational app featuring a growing collection of Physics and Chemistry simulations for students and curious minds. Labs currently include Newton's Laws, Ohm's Law, Projectile Motion, AC Circuits, Wave Mechanics, pH &amp; Acid-Base, Atomic &amp; Molecular structures, Electrochemistry, and more — with additional simulations added in future updates.</p>
+    <p>This Privacy Policy applies to all simulations, features, and content within the Science Lab app, now and in the future. By using Science Lab, you agree to the practices described here.</p>
   </div>
 
+  <!-- 02 -->
   <div class="section">
     <p class="section-number">02</p>
-    <h2>Information We Collect</h2>
-    <p>Wave Lab does not collect any personal information from its users. We do not require account registration, and we do not store your name, email address, location, photos, or any other personal data on our end.</p>
+    <h2>About the App &amp; Its Labs</h2>
+    <p>Science Lab is a pure simulation suite. No lab collects, transmits, or stores your experiment inputs — slider values, selected parameters, or results — outside of your device. All simulation data is processed entirely locally.</p>
+
+    <h3>⚛️ Physics Labs</h3>
+    <div class="lab-grid">
+      <div class="lab-chip">
+        <span class="chip-icon">🍎</span>
+        <div class="chip-inner">
+          <span class="chip-name">Newton Lab</span>
+          <span class="chip-desc">Inertia, F=ma, action-reaction</span>
+        </div>
+      </div>
+      <div class="lab-chip">
+        <span class="chip-icon">⚡</span>
+        <div class="chip-inner">
+          <span class="chip-name">Ohm Lab</span>
+          <span class="chip-desc">Circuits, voltage &amp; resistance</span>
+        </div>
+      </div>
+      <div class="lab-chip">
+        <span class="chip-icon">🏹</span>
+        <div class="chip-inner">
+          <span class="chip-name">Projectile Motion</span>
+          <span class="chip-desc">Ballista, planets, air resistance</span>
+        </div>
+      </div>
+      <div class="lab-chip">
+        <span class="chip-icon">〰️</span>
+        <div class="chip-inner">
+          <span class="chip-name">AC Lab</span>
+          <span class="chip-desc">Oscilloscope, transformer, RLC</span>
+        </div>
+      </div>
+      <div class="lab-chip">
+        <span class="chip-icon">🌊</span>
+        <div class="chip-inner">
+          <span class="chip-name">Wave Lab</span>
+          <span class="chip-desc">Transverse, standing, Doppler</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>🧪 Chemistry Labs</h3>
+    <div class="lab-grid">
+      <div class="lab-chip">
+        <span class="chip-icon">⚗️</span>
+        <div class="chip-inner">
+          <span class="chip-name">pH Lab</span>
+          <span class="chip-desc">pH scale, titration, acid-base</span>
+        </div>
+      </div>
+      <div class="lab-chip">
+        <span class="chip-icon">🔬</span>
+        <div class="chip-inner">
+          <span class="chip-name">Atomic &amp; Molecular</span>
+          <span class="chip-desc">Bohr model, VSEPR, orbitals</span>
+        </div>
+      </div>
+      <div class="lab-chip">
+        <span class="chip-icon">🔋</span>
+        <div class="chip-inner">
+          <span class="chip-name">Electrochemistry</span>
+          <span class="chip-desc">Galvanic cells, electrolysis</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <p>Science Lab is actively growing. New simulations will be added over time. This policy covers all current and future labs within the app — no policy update is needed when new labs are added, unless data practices change.</p>
+    </div>
   </div>
 
+  <!-- 03 -->
   <div class="section">
     <p class="section-number">03</p>
+    <h2>Information We Collect</h2>
+    <p>Science Lab does <strong>not</strong> collect any personal information. We do not require account registration, and we do not store your name, email address, location, device photos, or any personally identifiable data on our servers.</p>
+    <p>All simulation inputs and results are handled entirely on your device and are never sent to us.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="section">
+    <p class="section-number">04</p>
     <h2>Third-Party Advertising — Google AdMob</h2>
-    <p>Wave Lab displays advertisements provided by <strong>Google AdMob</strong>. AdMob may automatically collect certain non-personal and device-level information in order to serve relevant ads, which may include:</p>
+    <p>The free tier of Science Lab displays advertisements served by <strong>Google AdMob</strong>. AdMob may automatically collect certain non-personal and device-level information to serve relevant ads, including:</p>
     <ul>
       <li>Device identifiers (e.g. Advertising ID)</li>
       <li>Device type and operating system version</li>
@@ -292,59 +428,92 @@
       <li>Ad performance metrics</li>
     </ul>
     <div class="highlight">
-      <p>This data is collected and processed by Google LLC under their own privacy policy. You can review it at <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>.</p>
+      <p>This data is collected and processed by Google LLC under their own privacy policy. You can review it at <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>. Users on Pro or Lifetime plans have ads fully removed and AdMob is not active for those sessions.</p>
     </div>
   </div>
 
+  <!-- 05 -->
   <div class="section">
-    <p class="section-number">04</p>
+    <p class="section-number">05</p>
     <h2>Advertising ID &amp; Ad Personalization</h2>
-    <p>Google AdMob may use your device's Advertising ID to show personalized or non-personalized ads. Users aged 15 and above may receive interest-based advertisements.</p>
+    <p>Google AdMob may use your device's Advertising ID to display personalized or non-personalized ads. Users aged 15 and above may receive interest-based advertisements.</p>
     <p>You can opt out of personalized ads at any time through your device settings:</p>
     <ul>
       <li>On Android: <strong>Settings → Google → Ads → Opt out of Ads Personalization</strong></li>
     </ul>
+    <p>Upgrading to a Pro or Lifetime plan removes all ads from every lab in the app.</p>
   </div>
 
-  <div class="section">
-    <p class="section-number">05</p>
-    <h2>Children's Privacy</h2>
-    <p>Wave Lab is intended for users aged <strong>15 and older</strong>. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has used the app, please contact us and we will take appropriate action.</p>
-  </div>
-
+  <!-- 06 -->
   <div class="section">
     <p class="section-number">06</p>
-    <h2>Data Retention</h2>
-    <p>Since Wave Lab does not collect or store personal data, we have no user data to retain or delete. Any data collected by Google AdMob is governed by Google's own data retention policies.</p>
+    <h2>In-App Purchases &amp; Subscriptions</h2>
+    <p>Science Lab offers optional paid plans to unlock the full simulation suite and remove all ads. All transactions are processed securely by the <strong>Google Play Store</strong> or <strong>Apple App Store</strong> — we never see or store your payment information.</p>
+
+    <div class="plan-grid">
+      <div class="plan-card">
+        <div class="plan-name">Free</div>
+        <div class="plan-desc">Ads shown. Some features limited per lab.</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Pro · $0.99/mo</div>
+        <div class="plan-desc">All labs fully unlocked. No ads. Renews monthly.</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Lifetime · $4.99</div>
+        <div class="plan-desc">All labs fully unlocked. No ads. One-time payment.</div>
+      </div>
+    </div>
+
+    <p style="margin-top:1rem;">Free users may also watch <strong>rewarded ads</strong> to gain temporary premium access within a lab session. These are served by Google AdMob under the same data practices described in Section 04.</p>
+    <p>Subscription and purchase records are managed entirely by your app store. Please refer to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> or <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a> for how purchase data is handled on their platforms.</p>
   </div>
 
+  <!-- 07 -->
   <div class="section">
     <p class="section-number">07</p>
-    <h2>Data Security</h2>
-    <p>We take reasonable precautions to protect our app. Since we do not collect or store personal data ourselves, the risk of a data breach on our side is minimal. For AdMob-related data, Google employs industry-standard security measures.</p>
+    <h2>Children's Privacy</h2>
+    <p>Science Lab is intended for users aged <strong>15 and older</strong>. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has used the app, please contact us and we will take appropriate action.</p>
   </div>
 
+  <!-- 08 -->
   <div class="section">
     <p class="section-number">08</p>
+    <h2>Data Retention</h2>
+    <p>Since Science Lab does not collect or store personal data on our end, we have no user data to retain or delete. Subscription status is managed by your app store platform. Any data collected by Google AdMob is governed by Google's own data retention policies.</p>
+  </div>
+
+  <!-- 09 -->
+  <div class="section">
+    <p class="section-number">09</p>
+    <h2>Data Security</h2>
+    <p>We take reasonable precautions to protect our app and its users. Since we do not collect or store personal data ourselves, the risk of a data breach on our side is minimal. For AdMob-related and purchase-related data, Google and Apple employ industry-standard security measures on their respective platforms.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="section">
+    <p class="section-number">10</p>
     <h2>Your Rights</h2>
     <p>Depending on your country or region, you may have rights regarding data collected by third parties such as Google AdMob — including the right to access, correct, or delete your data. Please refer to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> and their ad settings to exercise these rights.</p>
   </div>
 
+  <!-- 11 -->
   <div class="section">
-    <p class="section-number">09</p>
+    <p class="section-number">11</p>
     <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be reflected with an updated Effective Date at the top of this page. We encourage users to review this policy periodically.</p>
+    <p>We may update this Privacy Policy as new labs and features are added to Science Lab. Any changes will be reflected with an updated Effective Date at the top of this page. We encourage users to review this policy periodically, especially after major app updates that introduce new functionality.</p>
   </div>
 
+  <!-- 12 -->
   <div class="section">
-    <p class="section-number">10</p>
+    <p class="section-number">12</p>
     <h2>Contact Us</h2>
-    <p>If you have any questions or concerns about this Privacy Policy, please reach out to us:</p>
+    <p>If you have any questions or concerns about this Privacy Policy, or about any lab or feature within Science Lab, please reach out:</p>
     <div class="contact-card">
       <div class="contact-icon">✉</div>
       <div class="contact-info">
-        <strong>Wave Lab Support</strong>
-        <span>your-email@example.com</span>
+        <strong>Science Lab Support</strong>
+        <span>sochetra411@gmail.com</span>
       </div>
     </div>
   </div>
@@ -352,7 +521,7 @@
 </div>
 
 <footer>
-  © 2026 Wave Lab · All rights reserved
+  © 2026 Science Lab · Virtual Experiment Suite · All rights reserved
 </footer>
 
 </body>
