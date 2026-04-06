@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – PawPass</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --surface: #1a1a1a;
+      --border: #2a2a2a;
+      --accent: #f97316;
+      --accent-dim: rgba(249,115,22,0.12);
+      --text: #e8e4dc;
+      --muted: #7a7570;
+      --heading-font: 'DM Serif Display', serif;
+      --body-font: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body-font);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      background: rgba(15,15,15,0.92);
+      backdrop-filter: blur(12px);
+      z-index: 10;
+    }
+
+    .logo-mark {
+      width: 36px; height: 36px;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-family: var(--heading-font);
+      font-size: 1.1rem;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+
+    .badge {
+      margin-left: auto;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid rgba(249,115,22,0.3);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    .hero {
+      margin-bottom: 3.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: var(--heading-font);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
+    .hero-meta .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .section {
+      margin-bottom: 2.75rem;
+      padding: 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .section:nth-child(2)  { animation-delay: 0.05s; }
+    .section:nth-child(3)  { animation-delay: 0.10s; }
+    .section:nth-child(4)  { animation-delay: 0.15s; }
+    .section:nth-child(5)  { animation-delay: 0.20s; }
+    .section:nth-child(6)  { animation-delay: 0.25s; }
+    .section:nth-child(7)  { animation-delay: 0.30s; }
+    .section:nth-child(8)  { animation-delay: 0.35s; }
+    .section:nth-child(9)  { animation-delay: 0.40s; }
+    .section:nth-child(10) { animation-delay: 0.45s; }
+    .section:nth-child(11) { animation-delay: 0.50s; }
+    .section:nth-child(12) { animation-delay: 0.55s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-number {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-family: var(--heading-font);
+      font-size: 1.3rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 1.4rem 0 0.6rem;
+    }
+
+    p { color: #c4bfb7; margin-bottom: 0.75rem; }
+    p:last-child { margin-bottom: 0; }
+
+    .highlight {
+      background: var(--accent-dim);
+      border: 1px solid rgba(249,115,22,0.25);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .highlight p { color: #d4c9b0; font-size: 0.9rem; margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      margin: 0.75rem 0;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 0.3rem 0 0.3rem 1.25rem;
+      position: relative;
+      color: #c4bfb7;
+      font-size: 0.93rem;
+    }
+
+    ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.8rem;
+      top: 0.35rem;
+    }
+
+    /* Feature chips grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.55rem;
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 520px) { .feature-grid { grid-template-columns: 1fr; } }
+
+    .feature-chip {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.6rem 0.85rem;
+    }
+
+    .chip-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.05rem; }
+    .chip-inner { display: flex; flex-direction: column; }
+    .chip-name { font-size: 0.82rem; font-weight: 500; color: var(--text); }
+    .chip-desc { font-size: 0.72rem; color: var(--muted); margin-top: 0.1rem; }
+
+    /* Plan cards */
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.55rem;
+      margin-top: 0.85rem;
+    }
+
+    @media (max-width: 520px) { .plan-grid { grid-template-columns: 1fr; } }
+
+    .plan-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+    }
+
+    .plan-name {
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .plan-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(249,115,22,0.3); transition: border-color 0.2s; }
+    a:hover { border-color: var(--accent); }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .contact-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--accent-dim);
+      border: 1px solid rgba(249,115,22,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-info { font-size: 0.85rem; }
+    .contact-info strong { display: block; color: var(--text); font-weight: 500; margin-bottom: 0.2rem; }
+    .contact-info span { color: var(--muted); }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 2.5rem 1.25rem 4rem; }
+      .section { padding: 1.5rem; }
+      header { padding: 1rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">🐾</div>
+  <span class="logo-text">PawPass</span>
+  <span class="badge">Privacy Policy</span>
+</header>
+
+<div class="container">
+
+  <div class="hero">
+    <p class="hero-label">Legal &amp; Privacy</p>
+    <h1>Privacy Policy</h1>
+    <div class="hero-meta">
+      <span><span class="dot"></span>Effective: April 6, 2026</span>
+      <span><span class="dot"></span>Last Updated: April 6, 2026</span>
+      <span><span class="dot"></span>App: PawPass</span>
+    </div>
+  </div>
+
+  <!-- 01 -->
+  <div class="section">
+    <p class="section-number">01</p>
+    <h2>Introduction</h2>
+    <p>Welcome to <strong>PawPass – Digital Pet Passport</strong>. PawPass is a comprehensive mobile app that helps pet owners manage their pets' health records, vaccinations, medications, appointments, weight history, and veterinary documents — all in one place.</p>
+    <p>This Privacy Policy explains what data we collect, how we use it, and your rights as a user. By creating an account or using the App, you confirm you are at least 13 years old and agree to the practices described here.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="section">
+    <p class="section-number">02</p>
+    <h2>What PawPass Does</h2>
+    <p>PawPass is a pet health management tool. Everything you enter — pet profiles, health records, documents — is stored securely in your account so you can access it from any device. Below is a summary of the app's core features:</p>
+
+    <h3>🐶 Pet &amp; Health Management</h3>
+    <div class="feature-grid">
+      <div class="feature-chip">
+        <span class="chip-icon">🐾</span>
+        <div class="chip-inner">
+          <span class="chip-name">Pet Profiles</span>
+          <span class="chip-desc">Photo, breed, age, weight & medical info</span>
+        </div>
+      </div>
+      <div class="feature-chip">
+        <span class="chip-icon">📋</span>
+        <div class="chip-inner">
+          <span class="chip-name">Health Records</span>
+          <span class="chip-desc">Vet visits, diagnoses, treatments & costs</span>
+        </div>
+      </div>
+      <div class="feature-chip">
+        <span class="chip-icon">💉</span>
+        <div class="chip-inner">
+          <span class="chip-name">Vaccinations</span>
+          <span class="chip-desc">Track records, due dates & status badges</span>
+        </div>
+      </div>
+      <div class="feature-chip">
+        <span class="chip-icon">💊</span>
+        <div class="chip-inner">
+          <span class="chip-name">Medications</span>
+          <span class="chip-desc">Dosage, frequency & schedule tracking</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>📅 Organisation &amp; Documents</h3>
+    <div class="feature-grid">
+      <div class="feature-chip">
+        <span class="chip-icon">🗓️</span>
+        <div class="chip-inner">
+          <span class="chip-name">Appointments</span>
+          <span class="chip-desc">Schedule, reminders & history</span>
+        </div>
+      </div>
+      <div class="feature-chip">
+        <span class="chip-icon">📄</span>
+        <div class="chip-inner">
+          <span class="chip-name">Documents</span>
+          <span class="chip-desc">Store & share vet PDFs and images</span>
+        </div>
+      </div>
+      <div class="feature-chip">
+        <span class="chip-icon">⚖️</span>
+        <div class="chip-inner">
+          <span class="chip-name">Weight Tracking</span>
+          <span class="chip-desc">History with visual charts</span>
+        </div>
+      </div>
+      <div class="feature-chip">
+        <span class="chip-icon">📤</span>
+        <div class="chip-inner">
+          <span class="chip-name">PDF Export</span>
+          <span class="chip-desc">Share full health records as PDF</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="section">
+    <p class="section-number">03</p>
+    <h2>Data We Collect</h2>
+    <p>We collect only the data necessary to provide PawPass's services:</p>
+    <ul>
+      <li><strong>Account data:</strong> your email address and password, managed securely via Supabase Auth.</li>
+      <li><strong>Pet profiles:</strong> name, breed, age, weight, photos, and medical notes you choose to enter.</li>
+      <li><strong>Health records:</strong> vet visit details, diagnoses, treatments, costs, vaccination records, medications, and appointments.</li>
+      <li><strong>Uploaded documents:</strong> images and PDF files you upload (e.g. vet certificates), stored in Supabase Storage.</li>
+      <li><strong>Device permissions:</strong> camera / photo library (for pet photos and documents), push notification tokens (for appointment reminders), and file storage (for document export and PDF generation).</li>
+      <li><strong>Usage data:</strong> anonymised crash reports and diagnostics to improve app stability.</li>
+    </ul>
+    <div class="highlight">
+      <p>We do not collect data that isn't needed for the app to function. We do not track your location, read your contacts, or access any data outside of what PawPass explicitly requests permission for.</p>
+    </div>
+  </div>
+
+  <!-- 04 -->
+  <div class="section">
+    <p class="section-number">04</p>
+    <h2>How We Use Your Data</h2>
+    <p>Your data is used exclusively to operate and improve PawPass:</p>
+    <ul>
+      <li>To create and manage your account and pet profiles.</li>
+      <li>To display your health records, vaccinations, medications, and appointments.</li>
+      <li>To send push notifications for upcoming appointments or vaccine due dates (only if you grant permission).</li>
+      <li>To process your subscription via in-app purchases — handled entirely by Apple App Store or Google Play.</li>
+      <li>To generate PDF exports of your pet's health records.</li>
+      <li>To diagnose bugs and improve app performance using anonymised diagnostics.</li>
+    </ul>
+  </div>
+
+  <!-- 05 -->
+  <div class="section">
+    <p class="section-number">05</p>
+    <h2>Data Sharing</h2>
+    <p>We <strong>do not sell, rent, or share your personal data</strong> with advertisers or third-party marketers. Your data is shared only with:</p>
+    <ul>
+      <li><strong>Supabase</strong> — our backend provider for authentication, database storage, and file storage. Supabase acts as a data processor under our instructions and is contractually bound to protect your data.</li>
+      <li><strong>Apple / Google</strong> — for processing in-app purchases. We never see or store your payment card details.</li>
+      <li><strong>Crash-reporting tools</strong> — anonymised diagnostics only; no personally identifiable information is included.</li>
+    </ul>
+    <div class="highlight">
+      <p>PawPass contains no advertising. No ad networks, no tracking SDKs, no data brokers. Your pet's health data stays yours.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="section">
+    <p class="section-number">06</p>
+    <h2>Subscription — Paw Plan</h2>
+    <p>PawPass offers a premium subscription called <strong>Paw Plan</strong> to unlock additional features. All transactions are processed securely by the Google Play Store or Apple App Store — we never see or store your payment information.</p>
+
+    <div class="plan-grid">
+      <div class="plan-card">
+        <div class="plan-name">Free</div>
+        <div class="plan-desc">Core pet profile and record management included.</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Paw Plan · Premium</div>
+        <div class="plan-desc">Full feature access. Manages via your app store account.</div>
+      </div>
+    </div>
+
+    <ul style="margin-top:1rem;">
+      <li>Subscriptions auto-renew unless cancelled at least 24 hours before the renewal date.</li>
+      <li>Manage or cancel anytime via your Apple ID or Google Play account settings.</li>
+      <li>Refunds are handled by Apple or Google per their respective policies.</li>
+    </ul>
+  </div>
+
+  <!-- 07 -->
+  <div class="section">
+    <p class="section-number">07</p>
+    <h2>Data Storage &amp; Security</h2>
+    <p>Your data is stored on Supabase-hosted servers with encryption in transit (TLS) and at rest. We apply industry-standard security practices. However, no system is 100% secure — please use a strong, unique password for your PawPass account.</p>
+    <p>Uploaded documents (images, PDFs) are stored in Supabase Storage and are private to your account. They are not publicly accessible.</p>
+  </div>
+
+  <!-- 08 -->
+  <div class="section">
+    <p class="section-number">08</p>
+    <h2>Data Retention &amp; Deletion</h2>
+    <p>We retain your data for as long as your account is active. If you delete your account, all your data — including pet records, health history, and uploaded documents — is permanently deleted within 30 days.</p>
+    <p>You may request deletion at any time by contacting us at the email below.</p>
+  </div>
+
+  <!-- 09 -->
+  <div class="section">
+    <p class="section-number">09</p>
+    <h2>Children's Privacy</h2>
+    <p>PawPass is intended for users aged <strong>13 and older</strong>. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has created an account, please contact us immediately and we will delete it.</p>
+    <p>Users under 18 should have parental consent before using the app.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="section">
+    <p class="section-number">10</p>
+    <h2>Your Rights</h2>
+    <p>Depending on where you live, you may have the right to:</p>
+    <ul>
+      <li>Access the personal data we hold about you.</li>
+      <li>Correct inaccurate data.</li>
+      <li>Request deletion of your data.</li>
+      <li>Object to or restrict certain processing.</li>
+      <li>Receive your data in a portable, machine-readable format.</li>
+    </ul>
+    <p>EU / EEA / UK users have additional rights under GDPR and UK GDPR. Our legal basis for processing is the performance of our contract with you (providing the app's services). To exercise any right, contact us — we respond within 30 days.</p>
+  </div>
+
+  <!-- 11 -->
+  <div class="section">
+    <p class="section-number">11</p>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy as PawPass grows. Significant changes will be communicated via in-app notice or email at least 14 days before taking effect. Continued use after changes constitutes acceptance. The Effective Date at the top of this page always reflects the latest version.</p>
+  </div>
+
+  <!-- 12 -->
+  <div class="section">
+    <p class="section-number">12</p>
+    <h2>Contact Us</h2>
+    <p>If you have any questions or concerns about this Privacy Policy or how your data is handled, please reach out:</p>
+    <div class="contact-card">
+      <div class="contact-icon">✉</div>
+      <div class="contact-info">
+        <strong>PawPass Support</strong>
+        <span>sochetra411@gmail.com</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 PawPass · Digital Pet Passport · All rights reserved
+</footer>
+
+</body>
+</html>
