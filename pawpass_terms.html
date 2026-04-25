@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service – PawPass</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --surface: #1a1a1a;
+      --border: #2a2a2a;
+      --accent: #f97316;
+      --accent-dim: rgba(249,115,22,0.12);
+      --text: #e8e4dc;
+      --muted: #7a7570;
+      --heading-font: 'DM Serif Display', serif;
+      --body-font: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body-font);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      background: rgba(15,15,15,0.92);
+      backdrop-filter: blur(12px);
+      z-index: 10;
+    }
+
+    .logo-mark {
+      width: 36px; height: 36px;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-family: var(--heading-font);
+      font-size: 1.1rem;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+
+    .badge {
+      margin-left: auto;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid rgba(249,115,22,0.3);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    .hero {
+      margin-bottom: 3.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: var(--heading-font);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
+    .hero-meta .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .section {
+      margin-bottom: 2.75rem;
+      padding: 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .section:nth-child(2)  { animation-delay: 0.05s; }
+    .section:nth-child(3)  { animation-delay: 0.10s; }
+    .section:nth-child(4)  { animation-delay: 0.15s; }
+    .section:nth-child(5)  { animation-delay: 0.20s; }
+    .section:nth-child(6)  { animation-delay: 0.25s; }
+    .section:nth-child(7)  { animation-delay: 0.30s; }
+    .section:nth-child(8)  { animation-delay: 0.35s; }
+    .section:nth-child(9)  { animation-delay: 0.40s; }
+    .section:nth-child(10) { animation-delay: 0.45s; }
+    .section:nth-child(11) { animation-delay: 0.50s; }
+    .section:nth-child(12) { animation-delay: 0.55s; }
+    .section:nth-child(13) { animation-delay: 0.60s; }
+    .section:nth-child(14) { animation-delay: 0.65s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-number {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-family: var(--heading-font);
+      font-size: 1.3rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 1.4rem 0 0.6rem;
+    }
+
+    p { color: #c4bfb7; margin-bottom: 0.75rem; }
+    p:last-child { margin-bottom: 0; }
+
+    .highlight {
+      background: var(--accent-dim);
+      border: 1px solid rgba(249,115,22,0.25);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .highlight p { color: #d4c9b0; font-size: 0.9rem; margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      margin: 0.75rem 0;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 0.3rem 0 0.3rem 1.25rem;
+      position: relative;
+      color: #c4bfb7;
+      font-size: 0.93rem;
+    }
+
+    ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.8rem;
+      top: 0.35rem;
+    }
+
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.55rem;
+      margin-top: 0.85rem;
+    }
+
+    @media (max-width: 520px) { .plan-grid { grid-template-columns: 1fr; } }
+
+    .plan-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+    }
+
+    .plan-name {
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .plan-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(249,115,22,0.3); transition: border-color 0.2s; }
+    a:hover { border-color: var(--accent); }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .contact-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--accent-dim);
+      border: 1px solid rgba(249,115,22,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-info { font-size: 0.85rem; }
+    .contact-info strong { display: block; color: var(--text); font-weight: 500; margin-bottom: 0.2rem; }
+    .contact-info span { color: var(--muted); }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 2.5rem 1.25rem 4rem; }
+      .section { padding: 1.5rem; }
+      header { padding: 1rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">🐾</div>
+  <span class="logo-text">PawPass</span>
+  <span class="badge">Terms of Service</span>
+</header>
+
+<div class="container">
+
+  <div class="hero">
+    <p class="hero-label">Legal &amp; Terms</p>
+    <h1>Terms of Service</h1>
+    <div class="hero-meta">
+      <span><span class="dot"></span>Effective: April 25, 2026</span>
+      <span><span class="dot"></span>Last Updated: April 25, 2026</span>
+      <span><span class="dot"></span>App: PawPass</span>
+    </div>
+  </div>
+
+  <!-- 01 -->
+  <div class="section">
+    <p class="section-number">01</p>
+    <h2>Acceptance of Terms</h2>
+    <p>Welcome to <strong>PawPass – Digital Pet Passport</strong>. These Terms of Service ("Terms") govern your access to and use of the PawPass mobile application and any related services (collectively, the "Service").</p>
+    <p>By downloading, installing, or using PawPass, you confirm that you are at least <strong>13 years of age</strong>, that you have read and understood these Terms, and that you agree to be bound by them. If you do not agree, please do not use the Service.</p>
+    <div class="highlight">
+      <p>If you are under 18, you must have permission from a parent or legal guardian to use PawPass. By using the app, you confirm that consent has been obtained.</p>
+    </div>
+  </div>
+
+  <!-- 02 -->
+  <div class="section">
+    <p class="section-number">02</p>
+    <h2>Description of the Service</h2>
+    <p>PawPass is a personal pet health management app that allows you to:</p>
+    <ul>
+      <li>Create and manage profiles for one or more pets.</li>
+      <li>Track vaccinations, medications, weight, and health records.</li>
+      <li>Schedule and manage veterinary appointments with reminders.</li>
+      <li>Export your pet's health information as a PDF passport.</li>
+      <li>Generate a shareable read-only link or QR code for your pet's passport (premium feature).</li>
+      <li>Upload and store vet documents, images, and certificates.</li>
+    </ul>
+    <p>PawPass is a personal organisational tool. It is <strong>not a substitute for professional veterinary advice, diagnosis, or treatment</strong>. Always consult a licensed veterinarian for your pet's health needs.</p>
+  </div>
+
+  <!-- 03 -->
+  <div class="section">
+    <p class="section-number">03</p>
+    <h2>Account Registration</h2>
+    <p>To use PawPass you must create an account with a valid email address and password. You are responsible for:</p>
+    <ul>
+      <li>Providing accurate and up-to-date account information.</li>
+      <li>Keeping your password secure and confidential.</li>
+      <li>All activity that occurs under your account.</li>
+      <li>Notifying us immediately at <a href="mailto:sochetra411@gmail.com">sochetra411@gmail.com</a> if you suspect unauthorised access.</li>
+    </ul>
+    <p>You may not share your account credentials or create accounts on behalf of others without their explicit consent. We reserve the right to suspend or terminate accounts that violate these Terms.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="section">
+    <p class="section-number">04</p>
+    <h2>Subscription &amp; Billing</h2>
+    <p>PawPass offers a free tier and a premium subscription called <strong>Paw Plan</strong>. All billing is handled entirely by the Apple App Store or Google Play Store — we never process or store your payment information directly.</p>
+
+    <div class="plan-grid">
+      <div class="plan-card">
+        <div class="plan-name">Free</div>
+        <div class="plan-desc">Core pet profiles and health record management at no cost.</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Paw Plan · Premium</div>
+        <div class="plan-desc">Full feature access including sharing, exports, and unlimited pets.</div>
+      </div>
+    </div>
+
+    <h3>Billing Terms</h3>
+    <ul>
+      <li>Subscriptions automatically renew unless cancelled at least 24 hours before the renewal date.</li>
+      <li>You can manage or cancel your subscription at any time via your Apple ID or Google Play account settings.</li>
+      <li>Refunds are subject to Apple's or Google's refund policies respectively — we cannot issue refunds directly.</li>
+      <li>Prices are displayed in your local currency and may vary by region.</li>
+      <li>We reserve the right to change subscription pricing with reasonable advance notice.</li>
+    </ul>
+  </div>
+
+  <!-- 05 -->
+  <div class="section">
+    <p class="section-number">05</p>
+    <h2>Acceptable Use</h2>
+    <p>You agree to use PawPass only for its intended purpose of managing your pets' health information. You must not:</p>
+    <ul>
+      <li>Use the Service for any unlawful purpose or in violation of any applicable laws.</li>
+      <li>Upload content that is harmful, offensive, defamatory, or infringes on any third party's rights.</li>
+      <li>Attempt to reverse-engineer, decompile, or tamper with any part of the app or its backend.</li>
+      <li>Use automated tools, bots, or scripts to access or interact with the Service.</li>
+      <li>Share, sell, or transfer your account access to any other person.</li>
+      <li>Attempt to gain unauthorised access to other users' data or our systems.</li>
+      <li>Use the shareable passport link feature to distribute misleading or fraudulent pet health information.</li>
+    </ul>
+    <div class="highlight">
+      <p>Violation of acceptable use policies may result in immediate account suspension or permanent termination without refund.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="section">
+    <p class="section-number">06</p>
+    <h2>Your Content &amp; Data</h2>
+    <p>You retain full ownership of all content you upload to PawPass — including pet profiles, health records, photos, and documents ("Your Content"). By uploading content, you grant us a limited, non-exclusive licence to store, display, and process Your Content solely for the purpose of operating and providing the Service to you.</p>
+    <ul>
+      <li>We do not claim ownership of Your Content.</li>
+      <li>We do not use Your Content for advertising or share it with third parties beyond what is described in our Privacy Policy.</li>
+      <li>You are responsible for ensuring you have the right to upload any content (e.g. vet documents).</li>
+      <li>You can delete your content at any time by deleting individual records or your entire account.</li>
+    </ul>
+  </div>
+
+  <!-- 07 -->
+  <div class="section">
+    <p class="section-number">07</p>
+    <h2>Shareable Passport Feature</h2>
+    <p>Premium users may generate a unique shareable link and QR code that allows anyone with the link to view a read-only version of their pet's passport — including vaccines, medications, and health records.</p>
+    <ul>
+      <li>You are solely responsible for who you share your pet's passport link with.</li>
+      <li>Anyone with the link can view the shared data — treat it like a shared document.</li>
+      <li>You can revoke access at any time by disabling sharing or regenerating the link in the app.</li>
+      <li>Do not share passport links in public forums or with untrusted parties.</li>
+      <li>We are not responsible for any consequences arising from you sharing your pet's passport link.</li>
+    </ul>
+  </div>
+
+  <!-- 08 -->
+  <div class="section">
+    <p class="section-number">08</p>
+    <h2>Intellectual Property</h2>
+    <p>All elements of PawPass — including but not limited to the app design, logo, icons, code, features, and branding — are the intellectual property of PawPass and are protected by applicable copyright, trademark, and other intellectual property laws.</p>
+    <ul>
+      <li>You may not copy, reproduce, modify, distribute, or create derivative works of any part of PawPass without our express written consent.</li>
+      <li>The PawPass name, logo, and "Paw Plan" are trademarks of PawPass. All rights reserved.</li>
+      <li>Feedback or suggestions you provide may be used by us to improve the Service without any obligation to you.</li>
+    </ul>
+  </div>
+
+  <!-- 09 -->
+  <div class="section">
+    <p class="section-number">09</p>
+    <h2>Medical Disclaimer</h2>
+    <p>PawPass is a personal organisational tool designed to help you keep track of your pet's health records. It is <strong>not a medical or veterinary service</strong>.</p>
+    <ul>
+      <li>Information stored in PawPass does not constitute veterinary advice.</li>
+      <li>Always consult a qualified, licensed veterinarian for diagnosis, treatment, or medical decisions regarding your pet.</li>
+      <li>We are not liable for any harm to your pet arising from reliance on information stored or displayed in PawPass.</li>
+      <li>Vaccine and medication reminders are provided as a convenience only — they are not a substitute for professional medical scheduling.</li>
+    </ul>
+    <div class="highlight">
+      <p>In a medical emergency, contact your veterinarian or an emergency animal clinic immediately. Do not rely solely on PawPass.</p>
+    </div>
+  </div>
+
+  <!-- 10 -->
+  <div class="section">
+    <p class="section-number">10</p>
+    <h2>Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, PawPass and its developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the Service, including but not limited to:</p>
+    <ul>
+      <li>Loss of data due to accidental deletion, technical failure, or account termination.</li>
+      <li>Inaccurate or missed reminders for medications or appointments.</li>
+      <li>Any harm to your pet arising from information stored or relied upon in the app.</li>
+      <li>Unauthorised access to your account if caused by your failure to secure your credentials.</li>
+    </ul>
+    <p>Our total liability to you for any claim arising out of these Terms shall not exceed the amount you paid for the Service in the 12 months preceding the claim, or $10 USD — whichever is greater.</p>
+  </div>
+
+  <!-- 11 -->
+  <div class="section">
+    <p class="section-number">11</p>
+    <h2>Service Availability &amp; Changes</h2>
+    <p>We strive to keep PawPass available at all times, but we do not guarantee uninterrupted access. We reserve the right to:</p>
+    <ul>
+      <li>Modify, update, or discontinue any feature of the Service at any time.</li>
+      <li>Perform scheduled or emergency maintenance that may result in temporary downtime.</li>
+      <li>Update these Terms at any time — significant changes will be notified via in-app notice or email at least 14 days in advance.</li>
+    </ul>
+    <p>Continued use of PawPass after changes to these Terms constitutes your acceptance of the updated Terms.</p>
+  </div>
+
+  <!-- 12 -->
+  <div class="section">
+    <p class="section-number">12</p>
+    <h2>Account Termination</h2>
+    <p>You may delete your account at any time via the Profile → Account → Delete Account option in the app. Upon deletion:</p>
+    <ul>
+      <li>All your pet profiles, health records, uploaded documents, and account data will be permanently deleted within 30 days.</li>
+      <li>Any active subscription will not be automatically cancelled — you must cancel via your App Store or Google Play settings separately.</li>
+      <li>Deleted data cannot be recovered.</li>
+    </ul>
+    <p>We reserve the right to suspend or terminate your account without notice if you violate these Terms, engage in fraudulent activity, or misuse the Service in any way.</p>
+  </div>
+
+  <!-- 13 -->
+  <div class="section">
+    <p class="section-number">13</p>
+    <h2>Governing Law</h2>
+    <p>These Terms are governed by and construed in accordance with applicable laws. Any disputes arising from these Terms or your use of PawPass shall be resolved through good-faith negotiation in the first instance. If a dispute cannot be resolved informally, it shall be subject to the jurisdiction of the courts applicable to the developer's location.</p>
+    <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
+  </div>
+
+  <!-- 14 -->
+  <div class="section">
+    <p class="section-number">14</p>
+    <h2>Contact Us</h2>
+    <p>If you have any questions about these Terms of Service, please contact us:</p>
+    <div class="contact-card">
+      <div class="contact-icon">✉</div>
+      <div class="contact-info">
+        <strong>PawPass Support</strong>
+        <span>sochetra411@gmail.com</span>
+      </div>
+    </div>
+    <p style="margin-top: 1rem;">We aim to respond to all enquiries within 5 business days.</p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 PawPass · Digital Pet Passport · All rights reserved
+</footer>
+
+</body>
+</html>
