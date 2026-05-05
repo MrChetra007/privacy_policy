@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — FreelanceFlow</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F7F5F0;
+      --surface: #FFFFFF;
+      --primary: #1A1A2E;
+      --accent: #4F6EF7;
+      --accent-light: #EEF1FE;
+      --text: #1A1A2E;
+      --muted: #7A7A8C;
+      --border: #E8E6E0;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    header {
+      background: var(--primary);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    .header-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .badge {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 100px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      background: var(--primary);
+      padding: 64px 32px 80px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      color: #fff;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.55);
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .wave {
+      display: block;
+      width: 100%;
+      margin-top: -2px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 32px 80px;
+    }
+
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+
+    .toc h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .toc ol {
+      padding-left: 20px;
+    }
+
+    .toc li {
+      margin-bottom: 6px;
+    }
+
+    .toc a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      transition: opacity 0.2s;
+    }
+
+    .toc a:hover { opacity: 0.7; }
+
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      margin-bottom: 20px;
+      scroll-margin-top: 90px;
+    }
+
+    .section-number {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      margin-bottom: 16px;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+
+    .section p {
+      color: #3D3D50;
+      margin-bottom: 14px;
+      font-weight: 300;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    .section ul li {
+      color: #3D3D50;
+      margin-bottom: 8px;
+      font-weight: 300;
+    }
+
+    .section ul li::marker {
+      color: var(--accent);
+    }
+
+    .highlight-box {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      color: var(--primary) !important;
+      font-weight: 400 !important;
+      margin: 0 !important;
+      font-size: 14px;
+    }
+
+    .contact-box {
+      background: var(--primary);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .contact-box h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      color: rgba(255,255,255,0.55);
+      font-weight: 300;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .contact-box a {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .contact-box a:hover { opacity: 0.85; }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .section { padding: 24px 20px; }
+      .toc { padding: 20px; }
+      .hero { padding: 48px 20px 64px; }
+      .contact-box { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">Freelance<span>Flow</span></a>
+    <span class="badge">Privacy Policy</span>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>Privacy Policy</h1>
+  <p>Last updated: May 2026</p>
+</div>
+
+<svg class="wave" viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <path d="M0 48 L0 24 Q360 0 720 24 Q1080 48 1440 24 L1440 48 Z" fill="#F7F5F0"/>
+</svg>
+
+<div class="container">
+
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#information">Information We Collect</a></li>
+      <li><a href="#usage">How We Use Your Information</a></li>
+      <li><a href="#storage">Data Storage & Security</a></li>
+      <li><a href="#sharing">Data Sharing</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#rights">Your Rights</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <div class="highlight-box" style="margin-bottom: 24px;">
+    <p>Your privacy matters to us. FreelanceFlow is designed to help you manage your freelance business. We collect only what's necessary to make the app work, and we never sell your data.</p>
+  </div>
+
+  <div class="section" id="information">
+    <span class="section-number">Section 01</span>
+    <h2>Information We Collect</h2>
+    <p>We collect information you provide directly to us when you use FreelanceFlow:</p>
+    <ul>
+      <li><strong>Account information</strong> — your name, email address, and password when you register</li>
+      <li><strong>Business data</strong> — client names, project details, invoices, payment records, time entries, and expenses you create within the app</li>
+      <li><strong>Uploaded files</strong> — receipt photos and invoice PDFs you upload to the app</li>
+      <li><strong>Profile settings</strong> — your currency preference, hourly rate, tax ID, payment terms, and notification preferences</li>
+      <li><strong>Usage data</strong> — basic app activity such as feature usage and error logs, to help us improve the app</li>
+    </ul>
+    <p>If you sign in with Google OAuth, we receive your name and email address from Google in accordance with their privacy policy.</p>
+  </div>
+
+  <div class="section" id="usage">
+    <span class="section-number">Section 02</span>
+    <h2>How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Provide, maintain, and improve the FreelanceFlow app</li>
+      <li>Generate invoices, track payments, and calculate your business metrics</li>
+      <li>Send you notifications about overdue payments, upcoming deadlines, and milestones</li>
+      <li>Auto-generate recurring invoices based on your templates</li>
+      <li>Authenticate your account and keep it secure</li>
+      <li>Respond to your support requests</li>
+      <li>Send you important updates about the app or your account</li>
+    </ul>
+    <p>We do not use your data for advertising purposes and we do not build advertising profiles.</p>
+  </div>
+
+  <div class="section" id="storage">
+    <span class="section-number">Section 03</span>
+    <h2>Data Storage & Security</h2>
+    <p>FreelanceFlow is powered by <strong>Supabase</strong>, a secure cloud infrastructure provider. Your data is stored in a PostgreSQL database protected by:</p>
+    <ul>
+      <li>Row-Level Security (RLS) — you can only ever access your own data</li>
+      <li>JWT-based authentication for every request</li>
+      <li>Encrypted connections (HTTPS/TLS) between the app and our servers</li>
+      <li>Private storage buckets for your invoice PDFs and receipt photos</li>
+    </ul>
+    <div class="highlight-box">
+      <p>Your financial data, client records, and uploaded files are stored in private buckets. No other user can access your data.</p>
+    </div>
+    <p>While we take security seriously and implement industry-standard measures, no method of transmission or storage is 100% secure. We encourage you to use a strong, unique password for your account.</p>
+  </div>
+
+  <div class="section" id="sharing">
+    <span class="section-number">Section 04</span>
+    <h2>Data Sharing</h2>
+    <p>We do not sell, trade, or rent your personal information to third parties. We may share your data only in the following limited circumstances:</p>
+    <ul>
+      <li><strong>Service providers</strong> — trusted providers like Supabase who help us operate the app, bound by confidentiality agreements</li>
+      <li><strong>Legal requirements</strong> — if required by law, court order, or governmental authority</li>
+      <li><strong>Business transfers</strong> — in the event of a merger or acquisition, your data may be transferred with appropriate notice</li>
+      <li><strong>Your consent</strong> — with your explicit permission for any other purpose</li>
+    </ul>
+    <p>When you share an invoice PDF via WhatsApp, Gmail, or Google Drive, that sharing is handled entirely by those third-party apps under their own privacy policies.</p>
+  </div>
+
+  <div class="section" id="retention">
+    <span class="section-number">Section 05</span>
+    <h2>Data Retention</h2>
+    <p>We retain your data for as long as your account is active. If you delete your account, we will delete your personal data and business records within 30 days, except where we are required to retain it for legal or compliance purposes.</p>
+    <p>Uploaded files (receipts and invoice PDFs) are deleted from our storage immediately upon account deletion.</p>
+  </div>
+
+  <div class="section" id="rights">
+    <span class="section-number">Section 06</span>
+    <h2>Your Rights</h2>
+    <p>You have the following rights regarding your data:</p>
+    <ul>
+      <li><strong>Access</strong> — you can view all your data directly within the app at any time</li>
+      <li><strong>Correction</strong> — you can update or correct your information in the app settings</li>
+      <li><strong>Deletion</strong> — you can delete your account and all associated data from the Profile screen</li>
+      <li><strong>Export</strong> — you can contact us to request an export of your data</li>
+      <li><strong>Opt-out</strong> — you can disable notifications at any time from the app settings</li>
+    </ul>
+    <p>To exercise any of these rights, use the in-app settings or contact us at the email below.</p>
+  </div>
+
+  <div class="section" id="children">
+    <span class="section-number">Section 07</span>
+    <h2>Children's Privacy</h2>
+    <p>FreelanceFlow is designed for adult freelancers and business owners. We do not knowingly collect personal information from anyone under the age of 13. If you believe a child has provided us with personal data, please contact us and we will delete it promptly.</p>
+  </div>
+
+  <div class="section" id="changes">
+    <span class="section-number">Section 08</span>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we make significant changes, we will notify you through the app or by email. Your continued use of FreelanceFlow after changes are posted constitutes your acceptance of the updated policy.</p>
+    <p>The date at the top of this page indicates when this policy was last revised.</p>
+  </div>
+
+  <div class="contact-box" id="contact">
+    <h2>Questions? We're here.</h2>
+    <p>If you have any questions about this Privacy Policy or how we handle your data, please reach out.</p>
+    <a href="mailto:privacy@freelanceflow.app">privacy@freelanceflow.app</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 FreelanceFlow. All rights reserved. &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a></p>
+</footer>
+
+</body>
+</html>
